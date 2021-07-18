@@ -1,0 +1,27 @@
+---
+title: "analysis"
+author: "Eliot Min"
+date: "7/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(Lahman)
+library(tidyverse)
+
+```
+
+```{r}
+
+#Doing the NL first
+
+Teams %>%
+  filter(yearID >= 2000, lgID == "NL") %>%
+  select(yearID, teamID, SF, SB, LgWin)
+  
+
+```
+
+
