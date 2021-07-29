@@ -15,12 +15,14 @@ library(tidyverse)
 
 ```{r}
 
-#Doing the NL first
+#Limiting the data so that we're only looking at teams past 1980
 
 team_data <- Teams %>% 
   filter(year >= 1980)
 
-  write.csv(team_data, "team_data.csv")
+#Exporting to a CSV for use in python jupyter notebook
+
+write.csv(team_data, "team_data.csv")
   
 
 ```
