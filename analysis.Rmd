@@ -20,7 +20,7 @@ library(tidyverse)
 team_data <- Teams %>% 
   filter(year >= 1980)
 
-#Exporting to a CSV for use in python jupyter notebook
+#Exporting to a CSV for use in python jupyter notebook.
 
 write.csv(team_data, "team_data.csv")
   
