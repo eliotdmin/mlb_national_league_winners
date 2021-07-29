@@ -17,34 +17,11 @@ library(tidyverse)
 
 #Doing the NL first
 
-NL_2000 <- Teams %>%
-  filter(yearID >= 2000, lgID == "NL")
+team_data <- Teams %>% 
+  filter(year >= 1980)
 
-AL_2000 <- Teams %>%
-  filter(yearID >= 2000, lgID == "AL")
-
-NL_2000 %>%
-  group_by(yearID, LgWin) %>%
-  summarize(mean_SB = mean(SB)) %>%
-  ggplot(aes(x = yearID, y = mean_SB, color = LgWin))+ geom_point() + 
-  labs(x = "year", y = "Stolen bases") +
-  theme_classic()
+  write.csv(team_data, "team_data.csv")
   
-
-```
-
-
-```{r}
-
-#Graphing the difference
-
-NL_2000 %>%
-  group_by(yearID, LgWin) %>%
-  summarize(mean_SB = mean(SB)) %>%
-  pivot_wider(names_from = LgWin, values_from = mean_SB) %>%
-  mutate(diff = Y-N) %>%
-  ggplot(aes(x = yearID, y = diff)) + geom_col() +
-  theme_classic()
 
 ```
 
