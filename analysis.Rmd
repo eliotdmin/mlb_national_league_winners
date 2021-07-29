@@ -15,7 +15,7 @@ library(tidyverse)
 
 ```{r}
 
-#Limiting the data so that we're only looking at teams past 1980
+#Limiting the data so that we're only looking at teams past 1980.
 
 team_data <- Teams %>% 
   filter(year >= 1980)
